@@ -2,4 +2,5 @@
 
 @theme {
   --font-sans: "Nunito Sans", sans-serif;
+  --bg-light: var(--color-grey-50);
 }
