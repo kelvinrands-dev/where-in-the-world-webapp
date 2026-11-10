@@ -4,6 +4,19 @@
   --font-sans: "Nunito Sans", sans-serif;
   --color-light-bg: var(--color-gray-50);
   --color-light-text: var(--color-gray-950);
+  --shadow-main: 0 0 10px rgba(0, 0, 1, 0.15);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    -webkit-font-smoothing: antialiased;
+  }
+  input {
+    outline: none;
+  }
 }
 
 @layer components {
