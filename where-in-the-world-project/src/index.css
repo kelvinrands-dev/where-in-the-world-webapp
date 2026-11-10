@@ -2,5 +2,12 @@
 
 @theme {
   --font-sans: "Nunito Sans", sans-serif;
-  --bg-light: var(--color-grey-50);
+  --color-light-bg: var(--color-gray-50);
+  --color-light-text: var(--color-gray-950);
+}
+
+@layer components {
+  .page-theme {
+    @apply bg-gray-50 text-gray-950;
+  }
 }
