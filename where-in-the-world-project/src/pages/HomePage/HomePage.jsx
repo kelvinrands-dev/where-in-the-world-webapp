@@ -1,11 +1,11 @@
 import { NavBar } from "../../components/NavBar";
 import { SearchAndFilter } from "./SearchAndFilter";
 
-export function HomePage() {
+export function HomePage({ allCountries }) {
   return (
-    <div class="page-theme flex h-screen flex-col gap-8">
+    <div className="page-theme flex h-screen flex-col gap-8">
       <NavBar />
-      <main class="flex flex-col px-4">
+      <main className="flex flex-col px-4">
         <SearchAndFilter />
       </main>
     </div>
