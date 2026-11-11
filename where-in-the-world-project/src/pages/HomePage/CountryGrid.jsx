@@ -1,10 +1,11 @@
 import { CountryCard } from "./CountryCard";
 
-export function CountryGrid({ allCountries }) {
+export function CountryGrid({ currentHomeGrid }) {
+  if (!currentHomeGrid) return null;
   return (
     <section className="grid w-full grid-cols-1 place-items-center gap-8">
-      {allCountries.map((country) => {
-        return <CountryCard country={country} />;
+      {currentHomeGrid.map((country, index) => {
+        return <CountryCard key={index} country={country} />;
       })}
     </section>
   );

@@ -8,12 +8,14 @@ import "./App.css";
 
 function App() {
   const [allCountries, setAllCountries] = useState([]);
+  const [currentHomeGrid, setCurrentHomeGrid] = useState([]);
 
   useEffect(() => {
     const fetchAllCountries = async () => {
       try {
         const res = await axios.get("/data.json");
         setAllCountries(res.data);
+        setCurrentHomeGrid(res.data);
       } catch (e) {
         console.log(e);
       }
@@ -24,7 +26,10 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<HomePage allCountries={allCountries} />} />
+      <Route
+        path="/"
+        element={<HomePage currentHomeGrid={currentHomeGrid} />}
+      />
       <Route path="/country/:countryName" element={<CountryPage />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
