@@ -28,7 +28,13 @@ function App() {
     <Routes>
       <Route
         path="/"
-        element={<HomePage currentHomeGrid={currentHomeGrid} />}
+        element={
+          <HomePage
+            currentHomeGrid={currentHomeGrid}
+            allCountries={allCountries}
+            setCurrentHomeGrid={setCurrentHomeGrid}
+          />
+        }
       />
       <Route path="/country/:countryName" element={<CountryPage />} />
       <Route path="*" element={<PageNotFound />} />

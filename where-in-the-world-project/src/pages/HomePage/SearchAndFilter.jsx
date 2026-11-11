@@ -1,11 +1,20 @@
 import { useState } from "react";
 import { Search, ChevronDown } from "lucide-react";
 
-export function SearchAndFilter() {
+export function SearchAndFilter({ allCountries, setCurrentHomeGrid }) {
   const [showRegionDrop, setShowRegionDrop] = useState(false);
 
   const handleDrop = () => {
     setShowRegionDrop((prev) => !prev);
+  };
+
+  const filterAfrica = () => {
+    setCurrentHomeGrid(
+      allCountries.filter((country) => {
+        return country.region === "Africa";
+      }),
+    );
+    setShowRegionDrop(false);
   };
 
   return (
@@ -33,13 +42,15 @@ export function SearchAndFilter() {
         {/**DROPDOWN */}
 
         <div
-          className={`${showRegionDrop && "pointer-events-auto visible translate-y-2 opacity-100"} shadow-main pointer-events-none invisible absolute z-10 flex w-45 translate-y-0 flex-col gap-2 rounded-md bg-white p-3 opacity-0 transition-all duration-300`}
+          className={`${showRegionDrop ? "pointer-events-auto visible translate-y-2 opacity-100" : "pointer-events-none invisible translate-y-0 opacity-0"} shadow-main absolute z-10 flex w-45 flex-col items-start rounded-md bg-white p-3 transition-all duration-300`}
         >
-          <p>Africa</p>
-          <p>America</p>
-          <p>Asia</p>
-          <p>Europe</p>
-          <p>Oceania</p>
+          <button className="w-full py-1 text-left" onClick={filterAfrica}>
+            Africa
+          </button>
+          <button className="w-full py-1 text-left">America</button>
+          <button className="w-full py-1 text-left">Asia</button>
+          <button className="w-full py-1 text-left">Europe</button>
+          <button className="w-full py-1 text-left">Oceania</button>
         </div>
       </div>
     </section>
