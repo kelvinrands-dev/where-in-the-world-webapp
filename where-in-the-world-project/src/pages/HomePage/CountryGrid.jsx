@@ -1,19 +1,11 @@
 import { CountryCard } from "./CountryCard";
 
 export function CountryGrid({ allCountries }) {
-  const mock = allCountries[0];
-
-  return <CountryCard country={mock} />;
-}
-
-/*<>
+  return (
+    <section className="grid w-full grid-cols-1 place-items-center gap-8">
       {allCountries.map((country) => {
-        const cFlag = country.flags.svg;
-        const cName = country.name;
-        const cPopulation = country.population;
-        const cRegion = country.region;
-        const cCapital = country.capital;
-        return <CountryCard />;
+        return <CountryCard country={country} />;
       })}
-      )
-    </>*/
+    </section>
+  );
+}
