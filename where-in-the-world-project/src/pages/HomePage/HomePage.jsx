@@ -1,6 +1,6 @@
 import { NavBar } from "../../components/NavBar";
 import { CountryGrid } from "./CountryGrid";
-import { SearchAndFilter } from "./SearchAndFilter";
+import { SearchAndFilter } from "./SearchAndFilter/SearchAndFilter";
 
 export function HomePage({
   currentHomeGrid,
