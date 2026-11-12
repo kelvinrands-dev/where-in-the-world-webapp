@@ -14,6 +14,7 @@ export function HomePage({
         <SearchAndFilter
           allCountries={allCountries}
           setCurrentHomeGrid={setCurrentHomeGrid}
+          currentHomeGrid={currentHomeGrid}
         />
         <CountryGrid currentHomeGrid={currentHomeGrid} />
       </main>

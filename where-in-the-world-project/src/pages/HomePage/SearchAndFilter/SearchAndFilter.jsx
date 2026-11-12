@@ -1,9 +1,23 @@
 import { useState } from "react";
-import { Search } from "lucide-react";
+import { Search, SearchX } from "lucide-react";
 import { Filter } from "./Filter";
 
-export function SearchAndFilter({ allCountries, setCurrentHomeGrid }) {
+export function SearchAndFilter({
+  allCountries,
+  setCurrentHomeGrid,
+  currentHomeGrid,
+}) {
   const [searchedCountry, setSearchedCountry] = useState("");
+
+  const handleSearch = (e) => {
+    const val = e.target.value;
+    setSearchedCountry(val);
+    setCurrentHomeGrid(
+      allCountries.filter((country) => {
+        return country.name.toLowerCase().includes(val.toLowerCase());
+      }),
+    );
+  };
 
   return (
     <section className="flex flex-col gap-4">
@@ -15,14 +29,7 @@ export function SearchAndFilter({ allCountries, setCurrentHomeGrid }) {
           placeholder="Search for a country..."
           value={searchedCountry}
           onChange={(e) => {
-            const val = e.target.value;
-            setSearchedCountry(val);
-
-            setCurrentHomeGrid(
-              allCountries.filter((country) => {
-                return country.name.toLowerCase().includes(val.toLowerCase());
-              }),
-            );
+            handleSearch(e);
           }}
         ></input>
       </div>
@@ -32,6 +39,8 @@ export function SearchAndFilter({ allCountries, setCurrentHomeGrid }) {
         allCountries={allCountries}
         setCurrentHomeGrid={setCurrentHomeGrid}
       />
+
+      {/**NOT FOUND */}
     </section>
   );
 }
