@@ -1,10 +1,14 @@
-import { useState } from "react";
 import { ChevronDown, Check } from "lucide-react";
 
-export function Filter({ allCountries, setCurrentHomeGrid }) {
-  const [showRegionDrop, setShowRegionDrop] = useState(false);
-  const [currentRegion, setCurrentRegion] = useState("");
-
+export function Filter({
+  allCountries,
+  setCurrentHomeGrid,
+  showRegionDrop,
+  setShowRegionDrop,
+  currentRegion,
+  setCurrentRegion,
+  setSearchedCountry,
+}) {
   const handleDrop = () => {
     setShowRegionDrop((prev) => !prev);
   };
@@ -17,6 +21,7 @@ export function Filter({ allCountries, setCurrentHomeGrid }) {
     );
     setCurrentRegion("Africa");
     setShowRegionDrop(false);
+    setSearchedCountry("");
   };
 
   const filterAmerica = () => {
@@ -27,6 +32,7 @@ export function Filter({ allCountries, setCurrentHomeGrid }) {
     );
     setCurrentRegion("America");
     setShowRegionDrop(false);
+    setSearchedCountry("");
   };
 
   const filterAsia = () => {
@@ -37,6 +43,7 @@ export function Filter({ allCountries, setCurrentHomeGrid }) {
     );
     setCurrentRegion("Asia");
     setShowRegionDrop(false);
+    setSearchedCountry("");
   };
 
   const filterEurope = () => {
@@ -47,6 +54,7 @@ export function Filter({ allCountries, setCurrentHomeGrid }) {
     );
     setCurrentRegion("Europe");
     setShowRegionDrop(false);
+    setSearchedCountry("");
   };
 
   const filterOceania = () => {
@@ -57,6 +65,7 @@ export function Filter({ allCountries, setCurrentHomeGrid }) {
     );
     setCurrentRegion("Oceania");
     setShowRegionDrop(false);
+    setSearchedCountry("");
   };
 
   return (

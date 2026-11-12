@@ -8,8 +8,11 @@ export function SearchAndFilter({
   currentHomeGrid,
 }) {
   const [searchedCountry, setSearchedCountry] = useState("");
+  const [showRegionDrop, setShowRegionDrop] = useState(false);
+  const [currentRegion, setCurrentRegion] = useState("");
 
   const handleSearch = (e) => {
+    setShowRegionDrop(false);
     const val = e.target.value;
     setSearchedCountry(val);
     setCurrentHomeGrid(
@@ -17,6 +20,7 @@ export function SearchAndFilter({
         return country.name.toLowerCase().includes(val.toLowerCase());
       }),
     );
+    setCurrentRegion("");
   };
 
   return (
@@ -38,6 +42,11 @@ export function SearchAndFilter({
       <Filter
         allCountries={allCountries}
         setCurrentHomeGrid={setCurrentHomeGrid}
+        showRegionDrop={showRegionDrop}
+        setShowRegionDrop={setShowRegionDrop}
+        currentRegion={currentRegion}
+        setCurrentRegion={setCurrentRegion}
+        setSearchedCountry={setSearchedCountry}
       />
 
       {/**NOT FOUND */}
