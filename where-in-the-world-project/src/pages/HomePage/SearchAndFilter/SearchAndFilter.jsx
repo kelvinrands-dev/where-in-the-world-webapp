@@ -41,6 +41,12 @@ export function SearchAndFilter({
       />
 
       {/**NOT FOUND */}
+      {currentHomeGrid.length === 0 && (
+        <div className="my-10 flex flex-col items-center justify-center text-xl font-extrabold">
+          <SearchX className="size-10" />
+          <p>Not Found</p>
+        </div>
+      )}
     </section>
   );
 }

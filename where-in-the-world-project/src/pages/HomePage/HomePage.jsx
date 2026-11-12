@@ -8,7 +8,7 @@ export function HomePage({
   setCurrentHomeGrid,
 }) {
   return (
-    <div className="page-theme flex flex-col gap-8">
+    <div className="flex flex-col gap-8">
       <NavBar />
       <main className="flex flex-col gap-8 px-4 pb-8">
         <SearchAndFilter
