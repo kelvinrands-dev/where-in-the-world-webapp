@@ -6,6 +6,7 @@ export function SearchAndFilter({
   allCountries,
   setCurrentHomeGrid,
   currentHomeGrid,
+  appIsLoading,
 }) {
   const [searchedCountry, setSearchedCountry] = useState("");
   const [showRegionDrop, setShowRegionDrop] = useState(false);
@@ -50,7 +51,7 @@ export function SearchAndFilter({
       />
 
       {/**NOT FOUND */}
-      {currentHomeGrid.length === 0 && (
+      {currentHomeGrid.length === 0 && !appIsLoading && (
         <div className="my-10 flex flex-col items-center justify-center text-xl font-extrabold">
           <SearchX className="size-10" />
           <p>Not Found</p>

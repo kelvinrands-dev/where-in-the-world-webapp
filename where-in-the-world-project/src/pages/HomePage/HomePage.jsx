@@ -6,6 +6,7 @@ export function HomePage({
   currentHomeGrid,
   allCountries,
   setCurrentHomeGrid,
+  appIsLoading,
 }) {
   return (
     <div className="flex flex-col gap-8">
@@ -15,8 +16,16 @@ export function HomePage({
           allCountries={allCountries}
           setCurrentHomeGrid={setCurrentHomeGrid}
           currentHomeGrid={currentHomeGrid}
+          appIsLoading={appIsLoading}
         />
         <CountryGrid currentHomeGrid={currentHomeGrid} />
+
+        {/**LOADING ELEMENT */}
+        {appIsLoading && (
+          <div className="flex justify-center text-xl font-extrabold">
+            Loading...
+          </div>
+        )}
       </main>
     </div>
   );

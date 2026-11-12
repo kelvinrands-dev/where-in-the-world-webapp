@@ -9,6 +9,7 @@ import "./App.css";
 function App() {
   const [allCountries, setAllCountries] = useState([]);
   const [currentHomeGrid, setCurrentHomeGrid] = useState([]);
+  const [appIsLoading, setAppIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchAllCountries = async () => {
@@ -16,6 +17,7 @@ function App() {
         const res = await axios.get("/data.json");
         setAllCountries(res.data);
         setCurrentHomeGrid(res.data);
+        setAppIsLoading(false);
       } catch (e) {
         console.log(e);
       }
@@ -33,6 +35,7 @@ function App() {
             currentHomeGrid={currentHomeGrid}
             allCountries={allCountries}
             setCurrentHomeGrid={setCurrentHomeGrid}
+            appIsLoading={appIsLoading}
           />
         }
       />

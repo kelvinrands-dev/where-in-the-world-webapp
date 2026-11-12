@@ -11,7 +11,7 @@ export function CountryCard({ country }) {
 
   return (
     <Link className="shadow-main w-[80%] overflow-hidden rounded-lg bg-white">
-      <img src={cFlag} />
+      <img className="shadow-sm" src={cFlag} />
       <div className="flex flex-col gap-4 px-6 py-4">
         <p className="text-xl font-extrabold">{cName}</p>
 
