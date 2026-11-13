@@ -10,7 +10,10 @@ export function CountryCard({ country }) {
   const cCapital = country.capital;
 
   return (
-    <Link className="shadow-main w-[80%] overflow-hidden rounded-lg bg-white">
+    <Link
+      to={`/country/${cName}`}
+      className="shadow-main w-[80%] overflow-hidden rounded-lg bg-white"
+    >
       <img className="shadow-sm" src={cFlag} />
       <div className="flex flex-col gap-4 px-6 py-4">
         <p className="text-xl font-extrabold">{cName}</p>
