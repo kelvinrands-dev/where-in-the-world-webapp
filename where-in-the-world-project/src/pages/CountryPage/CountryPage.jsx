@@ -37,6 +37,7 @@ export function CountryPage({ allCountries }) {
     <div className="flex flex-col gap-8">
       <NavBar />
       <main className="flex flex-col gap-8 px-4">
+        {/**BACK BUTTON */}
         <button
           onClick={handleBack}
           className="shadow-main items center flex w-25 justify-between bg-white px-4 py-1"
@@ -45,9 +46,12 @@ export function CountryPage({ allCountries }) {
           <span>Back</span>
         </button>
 
+        {/**MAIN PAGE */}
         <section className="flex flex-col gap-4">
+          {/**COUNTRY FLAG */}
           <img className="shadow-main w-full" src={country.flags.svg} />
 
+          {/**COUNTRY DETAILS */}
           <div className="flex flex-col gap-4">
             <p className="text-2xl font-extrabold">{country.name}</p>
 
@@ -91,6 +95,7 @@ export function CountryPage({ allCountries }) {
               </div>
             </div>
 
+            {/**BORDERING COUNTRIES */}
             <div className="mt-4 mb-8 flex flex-col gap-2">
               <p className="text-lg font-extrabold">Border Countries:</p>
               <div className="grid grid-cols-3 gap-2">
