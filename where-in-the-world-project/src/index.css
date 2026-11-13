@@ -19,8 +19,14 @@
   }
 }
 
+@utility dark-element {
+  background-color: hsl(209 23% 22%);
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer components {
   .page-theme {
-    @apply bg-gray-50 text-gray-950;
+    @apply bg-gray-50 text-gray-950 dark:bg-[hsl(207_26%_17%)] dark:text-white;
   }
 }
