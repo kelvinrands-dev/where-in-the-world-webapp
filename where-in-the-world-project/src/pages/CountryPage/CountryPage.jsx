@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useParams, useNavigate } from "react-router";
+import { useParams, useNavigate, Link } from "react-router";
 import { NavBar } from "../../components/NavBar";
 import { ArrowLeft } from "lucide-react";
 
@@ -34,6 +34,12 @@ export function CountryPage() {
     return `${lang.name}`;
   });
 
+  const borderingCountries = country.borders.map((border) => {
+    return allCountries.filter((country) => {
+      return country.alpha3Code === border;
+    });
+  });
+
   const handleBack = () => {
     navigate(-1);
   };
@@ -50,14 +56,14 @@ export function CountryPage() {
           <span>Back</span>
         </button>
 
-        <section>
-          <img className="w-full" src={country.flags.svg} />
+        <section className="flex flex-col gap-4">
+          <img className="h-65 w-full object-cover" src={country.flags.svg} />
 
-          <div>
-            <p>{country.name}</p>
+          <div className="flex flex-col gap-4">
+            <p className="text-2xl font-extrabold">{country.name}</p>
 
-            <div>
-              <div>
+            <div className="flex flex-col gap-8">
+              <div className="flex flex-col gap-2">
                 <p>
                   <span className="font-bold">Native Name: </span>
                   {country.nativeName}
@@ -80,7 +86,7 @@ export function CountryPage() {
                 </p>
               </div>
 
-              <div>
+              <div className="flex flex-col gap-2">
                 <p>
                   <span className="font-bold">Top Level Domain: </span>
                   {country.topLevelDomain}
@@ -96,8 +102,20 @@ export function CountryPage() {
               </div>
             </div>
 
-            <div>
-              <p>Border Countries</p>
+            <div className="mt-4 mb-8 flex flex-col gap-2">
+              <p className="text-lg font-extrabold">Border Countries:</p>
+              <div className="grid grid-cols-3 gap-2">
+                {borderingCountries.map((border, index) => {
+                  return (
+                    <Link
+                      className="shadow-main flex w-full items-center justify-center rounded-sm bg-white px-4 py-2 text-center text-sm"
+                      key={index}
+                    >
+                      {border[0].name}
+                    </Link>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </section>
