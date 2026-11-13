@@ -1,10 +1,15 @@
 import { useParams, useNavigate, Link } from "react-router";
 import { NavBar } from "../../components/NavBar";
 import { ArrowLeft } from "lucide-react";
+import { useEffect } from "react";
 
 export function CountryPage({ allCountries }) {
   const { countryName } = useParams();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [countryName]);
 
   if (allCountries.length === 0) return null;
 
@@ -41,7 +46,7 @@ export function CountryPage({ allCountries }) {
         </button>
 
         <section className="flex flex-col gap-4">
-          <img className="h-65 w-full object-cover" src={country.flags.svg} />
+          <img className="shadow-main w-full" src={country.flags.svg} />
 
           <div className="flex flex-col gap-4">
             <p className="text-2xl font-extrabold">{country.name}</p>
@@ -94,6 +99,7 @@ export function CountryPage({ allCountries }) {
                     <Link
                       className="shadow-main flex w-full items-center justify-center rounded-sm bg-white px-4 py-2 text-center text-sm"
                       key={index}
+                      to={`/country/${border[0].name}`}
                     >
                       {border[0].name}
                     </Link>
