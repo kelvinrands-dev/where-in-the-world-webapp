@@ -30,10 +30,10 @@ export function SearchAndFilter({
   return (
     <section className="flex flex-col gap-4">
       {/*SEARCH BAR */}
-      <div className="shadow-main group flex w-full gap-4 rounded-md bg-white p-3">
-        <Search className="transiton-all text-neutral-400 duration-300 group-focus-within:text-black" />
+      <div className="shadow-main group dark:dark-element flex w-full gap-4 rounded-md bg-white p-3 dark:text-white">
+        <Search className="transiton-all text-neutral-400 duration-300 group-focus-within:text-black dark:text-white dark:group-focus-within:text-white/70" />
         <input
-          className="w-full font-medium placeholder:text-neutral-400"
+          className="w-full font-medium placeholder:text-neutral-400 dark:placeholder:text-white/80"
           placeholder="Search for a country..."
           value={searchedCountry}
           onChange={(e) => {

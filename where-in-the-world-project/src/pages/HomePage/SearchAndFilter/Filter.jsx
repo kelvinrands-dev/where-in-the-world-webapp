@@ -70,19 +70,20 @@ export function Filter({
 
   return (
     <div className="text-sm">
+      {/**FILTER BY REGION BUTTON */}
       <button
         onClick={handleDrop}
-        className="shadow-main relative flex w-45 items-center justify-between rounded-md bg-white p-3"
+        className="shadow-main dark:dark-element relative flex w-45 items-center justify-between rounded-md bg-white p-3"
       >
         <p>Filter by Region</p>
         <ChevronDown
           className={`w-4 transition-transform duration-200 ${showRegionDrop && "rotate-180"}`}
         />
       </button>
-      {/**DROPDOWN */}
 
+      {/**DROPDOWN */}
       <div
-        className={`${showRegionDrop ? "pointer-events-auto visible translate-y-2 opacity-100" : "pointer-events-none invisible translate-y-0 opacity-0"} shadow-main absolute z-10 flex w-45 flex-col items-start rounded-md bg-white p-3 transition-all duration-300`}
+        className={`${showRegionDrop ? "pointer-events-auto visible translate-y-2 opacity-100" : "pointer-events-none invisible translate-y-0 opacity-0"} shadow-main dark:dark-element absolute z-10 flex w-45 flex-col items-start rounded-md bg-white p-3 transition-all duration-300`}
       >
         <button
           className="flex w-full items-center justify-between py-1 text-left"
