@@ -8,7 +8,9 @@ export function SearchAndFilter({
   currentHomeGrid,
   appIsLoading,
 }) {
-  const [searchedCountry, setSearchedCountry] = useState("");
+  const [searchedCountry, setSearchedCountry] = useState(
+    localStorage.getItem("searchTerm") || "",
+  );
   const [showRegionDrop, setShowRegionDrop] = useState(false);
   const [currentRegion, setCurrentRegion] = useState("");
 
@@ -24,6 +26,7 @@ export function SearchAndFilter({
       }),
     );
     setCurrentRegion("");
+    localStorage.setItem("searchTerm", val);
   };
 
   return (
@@ -41,6 +44,7 @@ export function SearchAndFilter({
           onKeyDown={(e) => {
             if (e.key === "Enter") {
               inputRef.current.blur();
+              setSearchedCountry("");
             }
           }}
           ref={inputRef}

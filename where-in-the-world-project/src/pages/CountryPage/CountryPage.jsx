@@ -39,11 +39,17 @@ export function CountryPage() {
     return `${lang.name}`;
   });
 
-  const borderingCountries = country.borders.map((border) => {
-    return allCountries.filter((country) => {
-      return country.alpha3Code === border;
+  console.log(country);
+
+  let borderingCountries = [];
+
+  if (country.borders) {
+    borderingCountries = country.borders.map((border) => {
+      return allCountries.filter((country) => {
+        return country.alpha3Code === border;
+      });
     });
-  });
+  }
 
   const handleBack = () => {
     navigate(-1);
@@ -126,6 +132,7 @@ export function CountryPage() {
                     </Link>
                   );
                 })}
+                {borderingCountries.length === 0 && <div>None</div>}
               </div>
             </div>
           </div>
