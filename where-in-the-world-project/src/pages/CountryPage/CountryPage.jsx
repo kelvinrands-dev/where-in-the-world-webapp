@@ -1,8 +1,24 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
 import { useParams, useNavigate } from "react-router";
 import { NavBar } from "../../components/NavBar";
 import { ArrowLeft } from "lucide-react";
 
-export function CountryPage({ allCountries }) {
+export function CountryPage() {
+  const [allCountries, setAllCountries] = useState();
+
+  useEffect(() => {
+    const fetchAllCountries = async () => {
+      try {
+        const res = await axios.get("/data.json");
+        setAllCountries(res.data);
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    fetchAllCountries();
+  }, []);
+
   const { countryName } = useParams();
   const navigate = useNavigate();
 
