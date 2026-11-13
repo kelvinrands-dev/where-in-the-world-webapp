@@ -44,7 +44,7 @@ export function CountryPage({ allCountries }) {
         {/**BACK BUTTON */}
         <button
           onClick={handleBack}
-          className="shadow-main items center flex w-25 justify-between bg-white px-4 py-1"
+          className="shadow-main items center flex w-25 justify-between bg-white px-4 py-1 transition-transform duration-200 hover:-translate-y-1 active:scale-[0.95]"
         >
           <ArrowLeft />
           <span>Back</span>
@@ -106,7 +106,7 @@ export function CountryPage({ allCountries }) {
                 {borderingCountries.map((border, index) => {
                   return (
                     <Link
-                      className="shadow-main flex w-full items-center justify-center rounded-sm bg-white px-4 py-2 text-center text-sm"
+                      className="shadow-main flex w-full items-center justify-center rounded-sm bg-white px-4 py-2 text-center text-sm transition-transform duration-200 hover:-translate-y-0.5 active:scale-[0.95]"
                       key={index}
                       to={`/country/${border[0].name}`}
                     >

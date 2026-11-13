@@ -30,8 +30,8 @@ export function SearchAndFilter({
   return (
     <section className="flex flex-col gap-4">
       {/*SEARCH BAR */}
-      <div className="shadow-main flex w-full gap-4 rounded-md bg-white p-3">
-        <Search className="text-neutral-400" />
+      <div className="shadow-main group flex w-full gap-4 rounded-md bg-white p-3">
+        <Search className="transiton-all text-neutral-400 duration-300 group-focus-within:text-black" />
         <input
           className="w-full font-medium placeholder:text-neutral-400"
           placeholder="Search for a country..."
