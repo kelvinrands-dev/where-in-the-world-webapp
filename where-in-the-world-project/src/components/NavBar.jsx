@@ -3,7 +3,7 @@ import { Moon } from "lucide-react";
 
 export function NavBar() {
   return (
-    <nav className="sticky top-0 z-50 flex items-center justify-between bg-white px-4 py-6 shadow-md">
+    <nav className="sticky top-0 z-50 flex items-center justify-between bg-white px-5 py-6 shadow-md">
       <Link to={"/"} className="font-extrabold">
         Where in the world?
       </Link>
