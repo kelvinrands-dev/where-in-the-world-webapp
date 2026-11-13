@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Search, SearchX } from "lucide-react";
 import { Filter } from "./Filter";
 
@@ -11,6 +11,8 @@ export function SearchAndFilter({
   const [searchedCountry, setSearchedCountry] = useState("");
   const [showRegionDrop, setShowRegionDrop] = useState(false);
   const [currentRegion, setCurrentRegion] = useState("");
+
+  const inputRef = useRef(null);
 
   const handleSearch = (e) => {
     setShowRegionDrop(false);
@@ -36,6 +38,12 @@ export function SearchAndFilter({
           onChange={(e) => {
             handleSearch(e);
           }}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              inputRef.current.blur();
+            }
+          }}
+          ref={inputRef}
         ></input>
       </div>
 

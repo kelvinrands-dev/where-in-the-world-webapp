@@ -5,11 +5,15 @@ import { HomePage } from "./pages/HomePage/HomePage";
 import { CountryPage } from "./pages/CountryPage/CountryPage";
 import { PageNotFound } from "./pages/PageNotFound/PageNotFound";
 import "./App.css";
+import { useHandleScroll } from "./hooks/useHandleScroll";
 
 function App() {
   const [allCountries, setAllCountries] = useState([]);
   const [currentHomeGrid, setCurrentHomeGrid] = useState([]);
   const [appIsLoading, setAppIsLoading] = useState(true);
+
+  //unfocuses all elements on scroll
+  useHandleScroll();
 
   useEffect(() => {
     const fetchAllCountries = async () => {
