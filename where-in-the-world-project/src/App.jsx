@@ -46,7 +46,10 @@ function App() {
           />
         }
       />
-      <Route path="/country/:countryName" element={<CountryPage />} />
+      <Route
+        path="/country/:countryName"
+        element={<CountryPage allCountries={allCountries} />}
+      />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );

@@ -1,27 +1,11 @@
 import { useParams, useNavigate, Link } from "react-router";
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { NavBar } from "../../components/NavBar";
 import { ArrowLeft } from "lucide-react";
 
-export function CountryPage() {
+export function CountryPage({ allCountries }) {
   const { countryName } = useParams();
   const navigate = useNavigate();
-
-  const [allCountries, setAllCountries] = useState([]);
-
-  useEffect(() => {
-    const fetchAllCountries = async () => {
-      try {
-        const res = await axios.get("/data.json");
-        setAllCountries(res.data);
-      } catch (e) {
-        console.log(e);
-      }
-    };
-
-    fetchAllCountries();
-  }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -106,7 +90,7 @@ export function CountryPage() {
                 </p>
                 <p>
                   <span className="font-bold">Currencies: </span>
-                  {country.currencies[0].name}
+                  {country.currencies && country.currencies[0].name}
                 </p>
                 <p>
                   <span className="font-bold">Languages: </span>
