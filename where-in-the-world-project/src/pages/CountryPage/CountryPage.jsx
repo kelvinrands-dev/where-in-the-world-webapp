@@ -1,11 +1,27 @@
 import { useParams, useNavigate, Link } from "react-router";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { NavBar } from "../../components/NavBar";
 import { ArrowLeft } from "lucide-react";
-import { useEffect } from "react";
 
-export function CountryPage({ allCountries }) {
+export function CountryPage() {
   const { countryName } = useParams();
   const navigate = useNavigate();
+
+  const [allCountries, setAllCountries] = useState([]);
+
+  useEffect(() => {
+    const fetchAllCountries = async () => {
+      try {
+        const res = await axios.get("/data.json");
+        setAllCountries(res.data);
+      } catch (e) {
+        console.log(e);
+      }
+    };
+
+    fetchAllCountries();
+  }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0);
