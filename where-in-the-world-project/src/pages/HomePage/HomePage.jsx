@@ -7,6 +7,8 @@ export function HomePage({
   allCountries,
   setCurrentHomeGrid,
   appIsLoading,
+  searchedCountry,
+  setSearchedCountry,
 }) {
   return (
     <div className="flex flex-col gap-8">
@@ -17,6 +19,8 @@ export function HomePage({
           setCurrentHomeGrid={setCurrentHomeGrid}
           currentHomeGrid={currentHomeGrid}
           appIsLoading={appIsLoading}
+          searchedCountry={searchedCountry}
+          setSearchedCountry={setSearchedCountry}
         />
         <CountryGrid currentHomeGrid={currentHomeGrid} />
 

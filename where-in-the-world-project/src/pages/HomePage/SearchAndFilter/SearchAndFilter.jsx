@@ -7,10 +7,9 @@ export function SearchAndFilter({
   setCurrentHomeGrid,
   currentHomeGrid,
   appIsLoading,
+  searchedCountry,
+  setSearchedCountry,
 }) {
-  const [searchedCountry, setSearchedCountry] = useState(
-    localStorage.getItem("searchTerm") || "",
-  );
   const [showRegionDrop, setShowRegionDrop] = useState(false);
   const [currentRegion, setCurrentRegion] = useState("");
 
@@ -26,7 +25,6 @@ export function SearchAndFilter({
       }),
     );
     setCurrentRegion("");
-    localStorage.setItem("searchTerm", val);
   };
 
   return (

@@ -39,8 +39,6 @@ export function CountryPage() {
     return `${lang.name}`;
   });
 
-  console.log(country);
-
   let borderingCountries = [];
 
   if (country.borders) {

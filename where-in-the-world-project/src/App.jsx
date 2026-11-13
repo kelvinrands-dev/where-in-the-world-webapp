@@ -11,6 +11,7 @@ function App() {
   const [allCountries, setAllCountries] = useState([]);
   const [currentHomeGrid, setCurrentHomeGrid] = useState([]);
   const [appIsLoading, setAppIsLoading] = useState(true);
+  const [searchedCountry, setSearchedCountry] = useState("");
 
   //unfocuses all elements on scroll
   useHandleScroll();
@@ -40,6 +41,8 @@ function App() {
             allCountries={allCountries}
             setCurrentHomeGrid={setCurrentHomeGrid}
             appIsLoading={appIsLoading}
+            searchedCountry={searchedCountry}
+            setSearchedCountry={setSearchedCountry}
           />
         }
       />
