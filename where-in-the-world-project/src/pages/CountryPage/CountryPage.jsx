@@ -38,9 +38,9 @@ export function CountryPage({ allCountries }) {
   };
 
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-8 xl:gap-15">
       <NavBar />
-      <main className="flex flex-col gap-8 px-5 md:px-8 lg:px-10">
+      <main className="flex flex-col gap-8 px-5 md:px-8 lg:px-10 xl:gap-15 xl:px-12">
         {/**BACK BUTTON */}
         <button
           onClick={handleBack}
@@ -51,15 +51,18 @@ export function CountryPage({ allCountries }) {
         </button>
 
         {/**MAIN PAGE */}
-        <section className="flex flex-col gap-4">
+        <section className="flex flex-col gap-4 xl:flex-row xl:items-center xl:gap-18">
           {/**COUNTRY FLAG */}
-          <img className="shadow-main w-full" src={country.flags.svg} />
+          <img
+            className="shadow-main w-full xl:h-100 xl:w-[45%] xl:object-cover"
+            src={country.flags.svg}
+          />
 
           {/**COUNTRY DETAILS */}
           <div className="flex flex-col gap-4">
             <p className="text-2xl font-extrabold">{country.name}</p>
 
-            <div className="flex flex-col gap-8 md:flex-row md:gap-32 lg:gap-40">
+            <div className="flex flex-col gap-8 md:flex-row md:gap-32 lg:gap-40 xl:gap-20">
               <div className="flex flex-col gap-2">
                 <p>
                   <span className="font-bold">Native Name: </span>
