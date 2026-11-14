@@ -42,7 +42,6 @@ export function SearchAndFilter({
           onKeyDown={(e) => {
             if (e.key === "Enter") {
               inputRef.current.blur();
-              setSearchedCountry("");
             }
           }}
           ref={inputRef}
