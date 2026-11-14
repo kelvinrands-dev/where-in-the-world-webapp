@@ -12,11 +12,11 @@ export function CountryCard({ country }) {
   return (
     <Link
       to={`/country/${cName}`}
-      className="shadow-main dark:dark-element w-[80%] overflow-hidden rounded-lg bg-white transition-transform duration-200 hover:-translate-y-2 focus-visible:-translate-y-4 active:scale-[0.95]"
+      className="shadow-main dark:dark-element h-90 w-[80%] overflow-hidden rounded-lg bg-white transition-transform duration-200 hover:-translate-y-2 focus-visible:-translate-y-4 active:scale-[0.95] md:w-full"
     >
-      <img className="shadow-sm" src={cFlag} />
-      <div className="flex flex-col gap-4 px-6 py-4">
-        <p className="text-xl font-extrabold">{cName}</p>
+      <img className="h-[50%] w-full object-cover shadow-sm" src={cFlag} />
+      <div className="flex flex-col justify-center gap-4 px-6 py-4 md:px-4">
+        <p className="truncate text-xl font-extrabold">{cName}</p>
 
         <div className="flex flex-col gap-2">
           <p>

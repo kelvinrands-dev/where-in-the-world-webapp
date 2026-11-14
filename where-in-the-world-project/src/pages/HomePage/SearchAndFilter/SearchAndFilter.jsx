@@ -28,9 +28,9 @@ export function SearchAndFilter({
   };
 
   return (
-    <section className="flex flex-col gap-4">
+    <section className="flex flex-col gap-4 md:flex-row md:justify-between">
       {/*SEARCH BAR */}
-      <div className="shadow-main group dark:dark-element flex w-full gap-4 rounded-md bg-white p-3 dark:text-white">
+      <div className="shadow-main group dark:dark-element flex w-full gap-4 rounded-md bg-white p-3 md:w-[50%] dark:text-white">
         <Search className="transiton-all text-neutral-400 duration-300 group-focus-within:text-black dark:text-white dark:group-focus-within:text-white/70" />
         <input
           className="w-full font-medium placeholder:text-neutral-400 dark:placeholder:text-white/80"

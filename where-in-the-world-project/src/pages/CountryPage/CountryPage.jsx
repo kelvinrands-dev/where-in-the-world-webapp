@@ -40,7 +40,7 @@ export function CountryPage({ allCountries }) {
   return (
     <div className="flex flex-col gap-8">
       <NavBar />
-      <main className="flex flex-col gap-8 px-5">
+      <main className="flex flex-col gap-8 px-5 md:px-8">
         {/**BACK BUTTON */}
         <button
           onClick={handleBack}

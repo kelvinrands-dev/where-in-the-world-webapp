@@ -6,7 +6,7 @@ export function PageNotFound() {
     <div className="flex flex-col gap-12">
       <NavBar />
 
-      <section className="flex flex-col items-center justify-center gap-4 px-5 text-center">
+      <section className="flex flex-col items-center justify-center gap-4 px-5 text-center md:px-8">
         <h1 className="flex flex-col items-center text-2xl font-extrabold">
           <CircleX size={40} />
           <span>Something went wrong.</span>

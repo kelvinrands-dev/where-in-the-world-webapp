@@ -11,9 +11,9 @@ export function HomePage({
   setSearchedCountry,
 }) {
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-8 md:gap-10">
       <NavBar />
-      <main className="flex flex-col gap-8 px-5 pb-8">
+      <main className="flex flex-col gap-8 px-5 pb-8 md:gap-10 md:px-8">
         <SearchAndFilter
           allCountries={allCountries}
           setCurrentHomeGrid={setCurrentHomeGrid}
