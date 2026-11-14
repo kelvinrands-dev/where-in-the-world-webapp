@@ -9,9 +9,10 @@ export function SearchAndFilter({
   appIsLoading,
   searchedCountry,
   setSearchedCountry,
+  currentRegion,
+  setCurrentRegion,
 }) {
   const [showRegionDrop, setShowRegionDrop] = useState(false);
-  const [currentRegion, setCurrentRegion] = useState("");
 
   const inputRef = useRef(null);
 
