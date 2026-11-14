@@ -31,6 +31,10 @@ function App() {
     fetchAllCountries();
   }, []);
 
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark");
+  }
+
   return (
     <Routes>
       <Route

@@ -3,16 +3,20 @@ import { Link } from "react-router";
 import { Moon, Sun } from "lucide-react";
 
 export function NavBar() {
-  const [currentTheme, setCurrentTheme] = useState("light");
+  const [currentTheme, setCurrentTheme] = useState(
+    localStorage.getItem("theme") || "light",
+  );
 
   const handleDark = () => {
     setCurrentTheme("dark");
     document.body.classList.add("dark");
+    localStorage.setItem("theme", "dark");
   };
 
   const handleLight = () => {
     setCurrentTheme("light");
     document.body.classList.remove("dark");
+    localStorage.setItem("theme", "light");
   };
 
   return (
