@@ -59,7 +59,7 @@ export function CountryPage({ allCountries }) {
           <div className="flex flex-col gap-4">
             <p className="text-2xl font-extrabold">{country.name}</p>
 
-            <div className="flex flex-col gap-8 md:flex-row md:gap-32">
+            <div className="flex flex-col gap-8 md:flex-row md:gap-32 lg:gap-40">
               <div className="flex flex-col gap-2">
                 <p>
                   <span className="font-bold">Native Name: </span>
