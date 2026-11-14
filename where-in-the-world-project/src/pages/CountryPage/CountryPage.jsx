@@ -40,7 +40,7 @@ export function CountryPage({ allCountries }) {
   return (
     <div className="flex flex-col gap-8">
       <NavBar />
-      <main className="flex flex-col gap-8 px-5 md:px-8">
+      <main className="flex flex-col gap-8 px-5 md:px-8 lg:px-10">
         {/**BACK BUTTON */}
         <button
           onClick={handleBack}
@@ -59,7 +59,7 @@ export function CountryPage({ allCountries }) {
           <div className="flex flex-col gap-4">
             <p className="text-2xl font-extrabold">{country.name}</p>
 
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-8 md:flex-row md:gap-32">
               <div className="flex flex-col gap-2">
                 <p>
                   <span className="font-bold">Native Name: </span>

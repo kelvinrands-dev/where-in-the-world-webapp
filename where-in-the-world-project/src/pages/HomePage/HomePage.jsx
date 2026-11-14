@@ -13,7 +13,7 @@ export function HomePage({
   return (
     <div className="flex flex-col gap-8 md:gap-10">
       <NavBar />
-      <main className="flex flex-col gap-8 px-5 pb-8 md:gap-10 md:px-8">
+      <main className="flex flex-col gap-8 px-5 pb-8 md:gap-10 md:px-8 lg:px-10">
         <SearchAndFilter
           allCountries={allCountries}
           setCurrentHomeGrid={setCurrentHomeGrid}

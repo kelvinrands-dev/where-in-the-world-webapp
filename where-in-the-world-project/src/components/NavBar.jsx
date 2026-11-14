@@ -20,7 +20,7 @@ export function NavBar() {
   };
 
   return (
-    <nav className="dark:dark-element sticky top-0 z-50 flex items-center justify-between bg-white px-5 py-6 shadow-md md:px-8">
+    <nav className="dark:dark-element sticky top-0 z-50 flex items-center justify-between bg-white px-5 py-6 shadow-md md:px-8 lg:px-10">
       <Link
         to={"/"}
         className="font-extrabold transition-all duration-100 hover:font-black active:scale-[0.95] dark:font-bold"
