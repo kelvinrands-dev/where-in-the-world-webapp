@@ -38,9 +38,9 @@ export function CountryPage({ allCountries }) {
   };
 
   return (
-    <div className="flex flex-col gap-8 xl:gap-15">
+    <div className="mb-8 flex h-screen flex-col gap-8">
       <NavBar />
-      <main className="flex flex-col gap-8 px-5 md:px-8 lg:px-10 xl:gap-15 xl:px-12">
+      <main className="flex flex-col gap-8 px-5 md:px-8 lg:px-10 xl:px-12">
         {/**BACK BUTTON */}
         <button
           onClick={handleBack}
@@ -51,7 +51,7 @@ export function CountryPage({ allCountries }) {
         </button>
 
         {/**MAIN PAGE */}
-        <section className="flex flex-col gap-4 xl:flex-row xl:items-center xl:gap-18">
+        <section className="flex flex-col gap-4 xl:flex-row xl:gap-18">
           {/**COUNTRY FLAG */}
           <img
             className="shadow-main w-full xl:h-100 xl:w-[45%] xl:object-cover"
